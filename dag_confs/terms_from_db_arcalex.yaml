@@ -1,0 +1,15 @@
+dag:
+  id: terms_from_db_arcalex
+  description: DAG da Arcalex
+  search:
+    terms:
+      from_db_select:
+        sql: >
+          SELECT nome as TERMO from termos_dou where ativo = 1
+        conn_id: ARCALEX_PROD
+    date: DIA
+  report:
+    emails:
+      - sumdaysoftware@gmail.com
+    attach_csv: True
+    subject: "[String] com caracteres especiais deve estar entre aspas"
